@@ -26,7 +26,7 @@ function App() {
     //   prompt,
     //   process.env.REACT_APP_API_KEY
     // );
-    const API_KEY = "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";
+
     try {
       // console.log(
       //   "process.env.REACT_APP_API_KEY",
@@ -40,7 +40,7 @@ function App() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${API_KEY}`,
+            Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
           },
           body: JSON.stringify({
             model: "gpt-3.5-turbo",
@@ -56,13 +56,13 @@ function App() {
               },
             ],
             temperature: 0.7,
-            max_tokens: 64,
+            max_tokens: 164,
             top_p: 1,
           }),
         }
       );
       const emailResult = await response.json();
-      console.log(emailResult.choices[0].message.content);
+      console.log(emailResult);
       setGenerateEmail(emailResult.choices[0].message.content);
       setLoading(false);
       setPrompt({
