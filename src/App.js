@@ -21,18 +21,8 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log(
-    //   "Form submitted with data:",
-    //   prompt,
-    //   process.env.REACT_APP_API_KEY
-    // );
 
     try {
-      // console.log(
-      //   "process.env.REACT_APP_API_KEY",
-      //   process.env.REACT_APP_OPENAI_API_KEY
-      // );
-
       setLoading(true);
       const response = await fetch(
         "https://api.openai.com/v1/chat/completions",
