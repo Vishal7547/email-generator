@@ -42,7 +42,7 @@ function App() {
               {
                 role: "system",
                 content:
-                  "You are a helpful assistant that generates professional , friendly and formal emails.",
+                  "You are a helpful assistant that generates professional , friendly and formal emails , write in max 300 words",
               },
               {
                 role: "user",
@@ -50,7 +50,7 @@ function App() {
               },
             ],
             temperature: 0.7,
-            max_tokens: 164,
+            max_tokens: 364,
             top_p: 1,
           }),
         }
